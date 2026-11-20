@@ -1,0 +1,173 @@
+# firefly-dark.toml — Helix theme
+# 流萤 / Firefly — Honkai: Star Rail
+# SAM 机甲 · 蓝钢灰阶 · 青焰 / 橙焰 / 机甲黄 / 眼瞳紫
+#
+# 取色来源：官方海报与角色立绘
+#   装甲暗部 / 关节  #0B1116 → #33434F（蓝钢灰，12 级）
+#   装甲亮面 / 高光  #5E7382 → #D6E0E4（银白）
+#   火焰（觉醒）     #4BE3D8   火焰（常态）#FF7A33
+#   机甲黄           #F5C552
+#   眼瞳下缘         #B79CF0（上青下紫）
+#   翼膜 / 发梢绿    #5FD3A6（仅用于 diff / 成功）
+#
+# 语法语义：
+#   橙色 = 关键字（火焰的结构）  青色 = 函数（青焰的流动）
+#   紫色 = 类型 / 元信息（眼瞳）  金色 = 字面量（机甲涂装）
+#
+# 与 firefly-light.toml 使用相同的 [palette] 键名。
+
+# -------------------------------------------------------
+# UI
+# -------------------------------------------------------
+
+"ui.background" = { bg = "steel_900" }
+"ui.text" = { fg = "steel_100" }
+"ui.text.focus" = { fg = "flame_cyan" }
+"ui.cursor" = { fg = "text_on_accent", bg = "flame_cyan" }
+"ui.cursor.primary" = { fg = "text_on_accent", bg = "flame_cyan" }
+"ui.cursor.match" = { bg = "match_bg" }
+"ui.cursorline.primary" = { bg = "steel_700" }
+"ui.selection" = { bg = "selection" }
+"ui.selection.primary" = { bg = "selection" }
+
+"ui.linenr" = { fg = "steel_400" }
+"ui.linenr.selected" = { fg = "steel_200" }
+"ui.statusline" = { fg = "steel_200", bg = "steel_800" }
+"ui.statusline.inactive" = { fg = "steel_400", bg = "steel_800" }
+"ui.statusline.normal" = { fg = "text_on_accent", bg = "flame_cyan", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "text_on_accent", bg = "flame_orange", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "text_on_accent", bg = "eye_violet", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "steel_100", bg = "steel_750" }
+"ui.popup.info" = { fg = "flame_cyan", bg = "steel_750" }
+"ui.window" = { fg = "steel_600" }
+"ui.menu" = { fg = "steel_200", bg = "steel_750" }
+"ui.menu.selected" = { fg = "text_on_accent", bg = "flame_cyan" }
+"ui.help" = { fg = "steel_200", bg = "steel_750" }
+
+"ui.virtual.whitespace" = { fg = "steel_650" }
+"ui.virtual.indent-guide" = { fg = "steel_500" }
+"ui.virtual.ruler" = { bg = "steel_850" }
+"ui.virtual.inlay-hint" = { fg = "steel_400", modifiers = ["italic"] }
+"ui.virtual.wrap" = { fg = "steel_400" }
+
+"ui.gutter" = { bg = "steel_850" }
+"ui.bufferline" = { fg = "steel_400", bg = "steel_800" }
+"ui.bufferline.active" = { fg = "flame_cyan", bg = "steel_800", modifiers = ["bold"] }
+
+# -------------------------------------------------------
+# 语法高亮
+# -------------------------------------------------------
+
+"keyword" = { fg = "flame_orange", modifiers = ["bold"] }
+"keyword.control" = { fg = "flame_orange", modifiers = ["bold"] }
+"keyword.function" = { fg = "flame_orange" }
+"keyword.operator" = { fg = "flame_cyan_deep" }
+"keyword.directive" = { fg = "eye_violet" }
+
+"function" = { fg = "flame_cyan" }
+"function.method" = { fg = "flame_cyan" }
+"function.builtin" = { fg = "flame_cyan_deep" }
+"function.macro" = { fg = "eye_violet" }
+
+"variable" = { fg = "steel_100" }
+"variable.parameter" = { fg = "steel_200" }
+"variable.builtin" = { fg = "flame_cyan_deep" }
+"variable.other.member" = { fg = "steel_200" }
+
+"type" = { fg = "eye_violet" }
+"type.builtin" = { fg = "eye_violet", modifiers = ["italic"] }
+"constructor" = { fg = "eye_violet" }
+
+"constant" = { fg = "mech_gold" }
+"constant.builtin" = { fg = "flame_cyan_deep" }
+"constant.numeric" = { fg = "mech_gold" }
+"constant.builtin.boolean" = { fg = "mech_gold", modifiers = ["bold"] }
+"constant.character" = { fg = "mech_gold" }
+"constant.character.escape" = { fg = "flame_cyan", modifiers = ["bold"] }
+
+"string" = { fg = "mech_gold" }
+"string.special" = { fg = "flame_cyan" }
+"string.regexp" = { fg = "eye_violet" }
+"string.escape" = { fg = "flame_cyan", modifiers = ["bold"] }
+
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.line" = { fg = "comment", modifiers = ["italic"] }
+"comment.block" = { fg = "comment", modifiers = ["italic"] }
+
+"operator" = { fg = "steel_200" }
+"punctuation" = { fg = "steel_400" }
+"punctuation.bracket" = { fg = "steel_300" }
+"punctuation.delimiter" = { fg = "steel_400" }
+
+"attribute" = { fg = "eye_violet" }
+"label" = { fg = "eye_violet" }
+"namespace" = { fg = "flame_cyan_deep" }
+"tag" = { fg = "flame_orange" }
+
+# -------------------------------------------------------
+# 诊断 / Diff / 其他
+# -------------------------------------------------------
+
+"error" = { fg = "flame_red" }
+"warning" = { fg = "mech_gold" }
+"info" = { fg = "flame_cyan" }
+"hint" = { fg = "steel_300" }
+
+"diagnostic.error" = { underline = { color = "flame_red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "mech_gold", style = "curl" } }
+"diagnostic.info" = { underline = { color = "flame_cyan", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "steel_400", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+"diff.plus" = { fg = "wing_green", bg = "diff_add" }
+"diff.minus" = { fg = "flame_red", bg = "diff_del" }
+"diff.delta" = { fg = "flame_cyan", bg = "diff_mod" }
+
+"markup.heading" = { fg = "flame_orange", modifiers = ["bold"] }
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link" = { fg = "flame_cyan", modifiers = ["underlined"] }
+"markup.raw" = { fg = "mech_gold" }
+"markup.quote" = { fg = "comment", modifiers = ["italic"] }
+"markup.list" = { fg = "flame_cyan_deep" }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+
+# -------------------------------------------------------
+# 色板（必须放在最后）
+# -------------------------------------------------------
+
+[palette]
+
+# --- SAM 装甲：蓝钢灰阶（暗部 → 银白高光）---
+steel_900 = "#0B1116"   # 编辑器背景
+steel_850 = "#0F161D"   # 行号槽 / ruler
+steel_800 = "#141D25"   # 面板 / 状态栏
+steel_750 = "#1A242E"   # 浮窗 / 补全菜单
+steel_700 = "#202C37"   # 光标行 / 悬停
+steel_650 = "#283745"   # 空白字符 / 弱边框
+steel_600 = "#33434F"   # 边框 / 分屏线
+steel_500 = "#455967"   # 缩进参考线
+steel_400 = "#5E7382"   # 行号 / inlay hint
+steel_300 = "#7E929F"   # 括号 / 弱提示
+steel_200 = "#A9BAC4"   # 次要文本 / 运算符
+steel_100 = "#D6E0E4"   # 主文本（装甲银白）
+
+# --- 火焰 / 涂装 ---
+flame_cyan    = "#4BE3D8"   # 觉醒态火焰（青）
+flame_cyan_deep = "#1FA6A8" # 青焰暗部：函数内置 / 命名空间
+flame_orange  = "#FF7A33"   # 常态火焰（橙红）：关键字
+flame_red     = "#FF5C4D"   # 过热核心：错误 / 删除
+mech_gold     = "#F5C552"   # 机甲黄：字符串 / 数字 / 常量
+eye_violet    = "#B79CF0"   # 眼瞳下缘紫：类型 / 元信息
+wing_green    = "#5FD3A6"   # 翼膜绿：新增 / 成功
+
+# --- 语义衍生 ---
+text_on_accent = "#08120F" # 亮色块上的深色字
+selection      = "#17383C" # 选区（青焰浸染）
+match_bg       = "#3A2C12" # 搜索匹配（机甲黄浸染）
+comment        = "#68818C" # 低饱和蓝灰绿
+diff_add       = "#10291F"
+diff_del       = "#2E1613"
+diff_mod       = "#1E2C33"

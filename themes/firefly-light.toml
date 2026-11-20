@@ -1,0 +1,174 @@
+# firefly-light.toml — Helix theme
+# 流萤 / Firefly — Honkai: Star Rail
+# SAM 装甲亮面 · 银白蓝钢灰阶 · 青焰 / 橙焰 / 机甲黄 / 眼瞳紫
+#
+# 与 firefly-dark.toml 使用相同的 [palette] 键名与语法语义，只是换了锚点：
+#   60% 背景 = 装甲亮面（#F4F7F7 银白）
+#   30% 文本 = 装甲暗部（#1B2730 枪灰）
+#   10% 强调 = 原色只做色块（状态栏 / 光标 / 选中），
+#              正文用同色相压暗的 *_ink，保证浅底可读性。
+#
+# 语法语义（与深色版一致）：
+#   橙色 = 关键字   青色 = 函数   紫色 = 类型 / 元信息   金色 = 字面量
+
+# -------------------------------------------------------
+# UI
+# -------------------------------------------------------
+
+"ui.background" = { bg = "steel_100" }
+"ui.text" = { fg = "steel_900" }
+"ui.text.focus" = { fg = "cyan_ink" }
+"ui.cursor" = { fg = "steel_050", bg = "cyan_ink" }
+"ui.cursor.primary" = { fg = "steel_050", bg = "cyan_ink" }
+"ui.cursor.match" = { bg = "match_bg" }
+"ui.cursorline.primary" = { bg = "cursorline" }
+"ui.selection" = { bg = "selection" }
+"ui.selection.primary" = { bg = "selection" }
+
+"ui.linenr" = { fg = "steel_700" }
+"ui.linenr.selected" = { fg = "steel_800" }
+"ui.statusline" = { fg = "steel_800", bg = "steel_150" }
+"ui.statusline.inactive" = { fg = "steel_600", bg = "steel_150" }
+"ui.statusline.normal" = { fg = "text_on_accent", bg = "flame_cyan", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "text_on_accent", bg = "flame_orange", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "text_on_accent", bg = "eye_violet", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "steel_900", bg = "steel_050" }
+"ui.popup.info" = { fg = "cyan_ink", bg = "steel_050" }
+"ui.window" = { fg = "steel_300" }
+"ui.menu" = { fg = "steel_800", bg = "steel_050" }
+"ui.menu.selected" = { fg = "text_on_accent", bg = "flame_cyan" }
+"ui.help" = { fg = "steel_800", bg = "steel_050" }
+
+"ui.virtual.whitespace" = { fg = "steel_200" }
+"ui.virtual.indent-guide" = { fg = "steel_400" }
+"ui.virtual.ruler" = { bg = "steel_150" }
+"ui.virtual.inlay-hint" = { fg = "steel_700", modifiers = ["italic"] }
+"ui.virtual.wrap" = { fg = "steel_700" }
+
+"ui.gutter" = { bg = "steel_150" }
+"ui.bufferline" = { fg = "steel_700", bg = "steel_150" }
+"ui.bufferline.active" = { fg = "cyan_ink", bg = "steel_150", modifiers = ["bold"] }
+
+# -------------------------------------------------------
+# 语法高亮
+# -------------------------------------------------------
+
+"keyword" = { fg = "orange_ink", modifiers = ["bold"] }
+"keyword.control" = { fg = "orange_ink", modifiers = ["bold"] }
+"keyword.function" = { fg = "orange_ink" }
+"keyword.operator" = { fg = "cyan_ink_deep" }
+"keyword.directive" = { fg = "violet_ink" }
+
+"function" = { fg = "cyan_ink" }
+"function.method" = { fg = "cyan_ink" }
+"function.builtin" = { fg = "cyan_ink_deep" }
+"function.macro" = { fg = "violet_ink" }
+
+"variable" = { fg = "steel_900" }
+"variable.parameter" = { fg = "steel_800" }
+"variable.builtin" = { fg = "cyan_ink_deep" }
+"variable.other.member" = { fg = "steel_800" }
+
+"type" = { fg = "violet_ink" }
+"type.builtin" = { fg = "violet_ink", modifiers = ["italic"] }
+"constructor" = { fg = "violet_ink" }
+
+"constant" = { fg = "gold_ink" }
+"constant.builtin" = { fg = "cyan_ink_deep" }
+"constant.numeric" = { fg = "gold_ink" }
+"constant.builtin.boolean" = { fg = "gold_ink", modifiers = ["bold"] }
+"constant.character" = { fg = "gold_ink" }
+"constant.character.escape" = { fg = "cyan_ink", modifiers = ["bold"] }
+
+"string" = { fg = "gold_ink" }
+"string.special" = { fg = "cyan_ink" }
+"string.regexp" = { fg = "violet_ink" }
+"string.escape" = { fg = "cyan_ink", modifiers = ["bold"] }
+
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.line" = { fg = "comment", modifiers = ["italic"] }
+"comment.block" = { fg = "comment", modifiers = ["italic"] }
+
+"operator" = { fg = "steel_800" }
+"punctuation" = { fg = "steel_700" }
+"punctuation.bracket" = { fg = "steel_800" }
+"punctuation.delimiter" = { fg = "steel_700" }
+
+"attribute" = { fg = "violet_ink" }
+"label" = { fg = "violet_ink" }
+"namespace" = { fg = "cyan_ink_deep" }
+"tag" = { fg = "orange_ink" }
+
+# -------------------------------------------------------
+# 诊断 / Diff / 其他
+# -------------------------------------------------------
+
+"error" = { fg = "red_ink" }
+"warning" = { fg = "gold_ink" }
+"info" = { fg = "cyan_ink" }
+"hint" = { fg = "steel_700" }
+
+"diagnostic.error" = { underline = { color = "red_ink", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "gold_ink", style = "curl" } }
+"diagnostic.info" = { underline = { color = "cyan_ink", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "steel_700", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+"diff.plus" = { fg = "green_ink", bg = "diff_add" }
+"diff.minus" = { fg = "red_ink", bg = "diff_del" }
+"diff.delta" = { fg = "cyan_ink", bg = "diff_mod" }
+
+"markup.heading" = { fg = "orange_ink", modifiers = ["bold"] }
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link" = { fg = "cyan_ink", modifiers = ["underlined"] }
+"markup.raw" = { fg = "gold_ink" }
+"markup.quote" = { fg = "comment", modifiers = ["italic"] }
+"markup.list" = { fg = "cyan_ink_deep" }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+
+# -------------------------------------------------------
+# 色板（必须放在最后）
+# -------------------------------------------------------
+
+[palette]
+
+# --- SAM 装甲亮面：银白蓝钢灰阶（最亮 → 枪灰）---
+steel_050 = "#FFFFFF"   # 浮窗 / 光标反色字
+steel_100 = "#F4F7F7"   # 编辑器背景（装甲亮面）
+steel_150 = "#EAEFEF"   # 面板 / 状态栏 / 行号槽
+steel_200 = "#DFE7E7"   # 空白字符
+steel_300 = "#CBD7D8"   # 边框 / 分屏线
+steel_400 = "#B0C0C3"   # 缩进参考线
+steel_600 = "#73878D"   # 非活动状态栏
+steel_700 = "#60727C"   # 行号 / inlay hint / 标点
+steel_800 = "#3E4E56"   # 次要文本 / 运算符 / 括号
+steel_900 = "#1B2730"   # 主文本（装甲枪灰）
+
+# --- 火焰 / 涂装（原色，只用作色块）---
+flame_cyan   = "#14C8BC"   # 觉醒态青焰
+flame_orange = "#FF7A33"   # 常态橙焰
+mech_gold    = "#F5C552"   # 机甲黄
+eye_violet   = "#A78BFA"   # 眼瞳下缘紫
+wing_green   = "#34C58A"   # 翼膜绿
+
+# --- 火焰 / 涂装（正文墨色，同色相压暗）---
+cyan_ink       = "#0B6E7A"
+cyan_ink_deep  = "#0A5A63"
+orange_ink     = "#B8460E"
+red_ink        = "#B3261E"
+gold_ink       = "#8A6100"
+violet_ink     = "#6D4FA8"
+green_ink      = "#1E7A57"
+
+# --- 语义衍生 ---
+text_on_accent = "#08120F" # 亮色块上的深色字
+cursorline     = "#E4F3F2" # 光标行（青焰薄雾）
+selection      = "#B0E3DB" # 选区（青焰浸染）
+match_bg       = "#FFD966" # 搜索匹配（机甲黄浸染）
+comment        = "#566B73" # 低饱和蓝灰绿
+diff_add       = "#DDF3E8"
+diff_del       = "#FBE3E0"
+diff_mod       = "#E6F2F1"
